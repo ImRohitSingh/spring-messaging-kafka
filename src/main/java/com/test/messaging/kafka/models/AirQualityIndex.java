@@ -1,7 +1,7 @@
 package com.test.messaging.kafka.models;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,6 +20,6 @@ public class AirQualityIndex implements Serializable {
 
 	private Double aqi;
 
-	private LocalDateTime timestamp;
+	private ZonedDateTime timestamp;
 
 }

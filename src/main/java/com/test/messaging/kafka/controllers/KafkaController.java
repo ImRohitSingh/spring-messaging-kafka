@@ -1,6 +1,6 @@
 package com.test.messaging.kafka.controllers;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ public class KafkaController {
 	@PostMapping(path = "/produce/{aqi}")
 	@ResponseStatus(code = HttpStatus.OK, reason = "Message successfully sent")
 	public void produceToQueue(@PathVariable(name = "aqi", required = true) Double aqi) {
-		producer.produce(new AirQualityIndex(aqi, LocalDateTime.now()));
+		producer.produce(new AirQualityIndex(aqi, ZonedDateTime.now()));
 	}
 
 }
