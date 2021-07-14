@@ -2,7 +2,7 @@
 
 A spring boot application that:
 1. produces ```100 messages```, which are nothing but AQI at a given time, to a Kafka Topic, at a regular interval of ```10 seconds```;
-2. consumes** them in ```3``` concurrent threads based on the need;
+2. consumes** them in ```3``` concurrent threads atmost, based on the requirement;
 3. has an endpoint exposed, using which a single message can be posted at a time.
 
 ** In an ideal scenario as seen in micro-service based applications that uses messaging, ```producers``` and ```consumers``` are part of separate applications.
