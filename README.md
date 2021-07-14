@@ -14,12 +14,12 @@ A spring boot application that:
 
 ## Kafka Installation
 
-1. Download the binary from the [link](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.8.0/kafka_2.13-2.8.0.tgz) (you can install a lates version when available as well) and extract it to a local folder.
+1. Download the binary from the [link](https://www.apache.org/dyn/closer.cgi?path=/kafka/2.8.0/kafka_2.13-2.8.0.tgz) (you can download a latest version as well, when available) and extract it to a local folder.
 2. Go to ```kafka_2.12-2.8.0\config``` and open ```server.properties```.
 3. Modify ```log.dirs``` property to a valid location where logs will be generated.
 4. Go to ```kafka_2.12-2.8.0\config``` and open ```zookeeper.properties```.
 5. Modify ```dataDir``` property to a valid location where zookeeper data will be generated.
-6. From the root folder, i.e., from ```kafka_2.12-2.8.0``` open ```bash```** and run the following commands respectively:
+6. From the root folder, i.e., from ```kafka_2.12-2.8.0``` open two ```bash```** terminals and run the following commands:
 ```sh
 bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
@@ -28,11 +28,11 @@ The commands will start the zookeeper instance and the Kafka server respectively
 
 ** ```cmd``` would not be able to run the commands. You can use ```Git Bash``` instead.
 
-> Note: The instructions are for Windows machine. You may follow this [link](https://kafka.apache.org/quickstart) for the setup in different environments.
+> Note: The instructions are for Windows machine. You may follow this [link](https://kafka.apache.org/quickstart) for setup in different environments.
 
-### application.properties
+## Properties
 
-#### Producer:
+### Producer:
 ```sh
 spring.kafka.producer.bootstrap-servers=localhost:9092
 ```
@@ -53,7 +53,7 @@ spring.kafka.producer.properties.spring.json.add.type.headers=false
 ```
 Default is ```true```.  Used to disable the ```JsonSerializer```'s default behavior of sending type information in headers.
 
-#### Consumer:
+### Consumer:
 ```sh
 spring.kafka.consumer.bootstrap-servers=localhost:9092
 ```
